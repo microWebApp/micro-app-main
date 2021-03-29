@@ -6,6 +6,7 @@ import {
 } from "single-spa-layout";
 
 const routes = constructRoutes(document.querySelector("#single-spa-layout"));
+console.log('routes', routes)
 const applications = constructApplications({
   routes,
   loadApp({ name }) {
@@ -13,7 +14,7 @@ const applications = constructApplications({
   },
 });
 const layoutEngine = constructLayoutEngine({ routes, applications });
-
+console.log('applications', applications)
 applications.forEach(registerApplication);
 layoutEngine.activate();
 start();
